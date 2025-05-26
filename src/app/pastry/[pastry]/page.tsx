@@ -5,8 +5,9 @@ type pastryProp = Promise<{ pastry: string }>;
 
 export default async function PastryPage ({params}: {params: pastryProp}) { 
     const {pastry} =  await params;
-       const selectedPastry : PastryType | undefined = selectedMenu(pastry) 
-       console.log(pastry)
+        const clickedPastry  = decodeURIComponent (pastry)
+        console.log(clickedPastry)
+       const selectedPastry : PastryType | undefined = selectedMenu(clickedPastry) 
        console.log(selectedPastry) 
     return(
         <>

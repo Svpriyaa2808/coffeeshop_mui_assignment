@@ -49,7 +49,7 @@ function ResponsiveAppBar() {
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: "Almendra" , 
-                fontWeight: 700,
+                fontWeight: "bold",
                 fontSize: "2rem",
                 fontStyle:"italic",
                 letterSpacing: '.3rem',
@@ -108,8 +108,10 @@ function ResponsiveAppBar() {
               display: { xs: 'flex', md: 'none' },
                 textAlign:{xs : 'center'},
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
+              fontFamily: "Almendra" , 
+                fontWeight: "bold",
+                fontSize: "2rem",
+                fontStyle:"italic",
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -124,7 +126,14 @@ function ResponsiveAppBar() {
                 key={page}
                 onClick={handleCloseNavMenu}
                 href={`${page.toLowerCase()}`}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, 
+                    color: 'white', 
+                    display: 'block' ,
+                    fontSize:"1.2rem",
+                    fontWeight:700,
+                    textDecoration:"underline"
+                }}
+                
               >
                 {page}
               </Button>
