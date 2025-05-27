@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CoffeeRoundedIcon from '@mui/icons-material/CoffeeRounded';
-import { Almendra } from 'next/font/google';
+
 
 const pages = ['Pastry', 'Breakfast'];
 
@@ -44,7 +44,6 @@ function ResponsiveAppBar() {
             sx={{
                 flexGrow:1,
                 justifyContent:"center",
-                mr: 2,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: "Almendra" , 
                 fontWeight: "bold",
