@@ -1,4 +1,4 @@
-export interface PastryType {
+export interface MenuType {
     name:string,
     price:number,
     description:string,

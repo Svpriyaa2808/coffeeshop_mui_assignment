@@ -1,6 +1,9 @@
+import MenuCardDisplay from "@/components/MenuCardDisplay"
+import { snackMenu } from "@/data/data"
+
 const Breakfast = () => {
     return (
-        <p>Breakfast</p>
+        <MenuCardDisplay menu={snackMenu} type="breakfast"/>
     )
 }
 

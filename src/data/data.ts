@@ -1,6 +1,6 @@
-import {PastryType} from '@/types/type'
+import {MenuType} from '@/types/type'
 
-export const pastryMenu:PastryType[] = [
+export const pastryMenu:MenuType[] = [
     {
       name: "Carrot Muffin",
       price: 3.25,
@@ -57,7 +57,7 @@ export const pastryMenu:PastryType[] = [
     }
   ];
   
-  export const snackMenu = [
+  export const snackMenu:MenuType[]= [
     {
       name: "Scones",
       price: 3.0,
@@ -77,6 +77,12 @@ export const pastryMenu:PastryType[] = [
       image:"sourdough_tomato.jpeg"
     },
     {
+        name : "Sourdough Sandwich Cheese & Turkey",
+        price: 5.5,
+        description : "Sourdough bread with cheese, turkey, cream cheese and vegetables.",
+        image: "sourdough_cheese.jpeg"
+    },
+    {
       name: "Greek Yogurt with Agave",
       price: 3.75,
       description: "Creamy Greek yogurt drizzled with natural agave syrup for a light, sweet snack.",
@@ -90,7 +96,7 @@ export const pastryMenu:PastryType[] = [
     }
   ];
   
- export const selectedMenu = (name:string):PastryType | undefined => {
+ export const selectedMenu = (name:string):MenuType | undefined => {
   return  pastryMenu.find(item => item.name.toLowerCase() === name.toLowerCase()) 
  }
 
