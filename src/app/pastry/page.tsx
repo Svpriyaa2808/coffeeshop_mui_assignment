@@ -65,7 +65,7 @@ export default function ImgMediaCard() {
          sx={{flex: {md: "0 0 30%" , sm : " 0 0 40%", xs: "0 0 90%"},
             border:"1px solid black",
             m:2,
-            p: {md: 0 ,lg : 0,sm: 0},
+            p: {md: 0 ,lg : 0,xs: 0,sm: 0},
          }} >
       <CardMedia
         component="img"
@@ -80,7 +80,7 @@ export default function ImgMediaCard() {
         }}
       />
       <CardContent sx={{
-        minHeight:"180px"
+        minHeight:{md:"250px",lg:"180px"}
       }}>
         <Typography gutterBottom variant="h4" component="a"  
          href={`/pastry/${item.name.toLowerCase()}`} 
