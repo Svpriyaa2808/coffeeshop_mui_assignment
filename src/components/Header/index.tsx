@@ -29,8 +29,6 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
- 
-
   return (
     <AppBar sx={{
         backgroundColor: "#832232"
@@ -125,7 +123,8 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                href={`${page.toLowerCase()}`}
+                component = "a"
+                href={`/${page.toLowerCase()}`}
                 sx={{ my: 2, 
                     color: 'white', 
                     display: 'block' ,

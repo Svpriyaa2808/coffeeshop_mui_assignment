@@ -43,6 +43,16 @@ const handleClick = (item: PastryType) => {
 }
 
 export default function ImgMediaCard() {
+
+    const styled ={
+        content : {
+            color: "black",
+            fontStyle:"italic",
+            fontSize:"20px",
+            my:2
+        }
+    }
+
   return (
     <Card  sx={{ display: "flex",
         flexWrap:"wrap",
@@ -69,28 +79,36 @@ export default function ImgMediaCard() {
             
         }}
       />
-      <CardContent>
+      <CardContent sx={{
+        minHeight:"180px"
+      }}>
         <Typography gutterBottom variant="h4" component="a"  
          href={`/pastry/${item.name.toLowerCase()}`} 
         sx={{fontFamily: "Almendra",
             fontStyle:"italic",
-            fontWeight:"400",
+            fontWeight:"700",
             color:"#832232",
-             textDecoration:"none"
+            textDecoration:"none",
+            fontSize:"22px" 
         }}>
           {item.name}
         </Typography>
-        <Typography variant="body2"  sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2"  sx={styled.content}>
           {item.description}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" sx={styled.content}>
           Price:{`$${item.price}`}
         </Typography>
       </CardContent>
       <CardActions>
-      <Button onClick={()=>handleClick(item)} size="small">Add to Favourites</Button>
+      <Button onClick={()=>handleClick(item)} size="small" sx={
+        {
+            fontSize : "16px",
+            color : "#832232"
+        }
+      }>Add to Favourites</Button>
         <FavoriteIcon  sx={{
-            fill:"red"
+            fill:"#832232"
         }}></FavoriteIcon>
       </CardActions>
       </Container>
