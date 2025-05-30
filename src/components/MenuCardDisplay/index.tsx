@@ -14,14 +14,18 @@ import { MenuType } from '@/types/type';
 
 interface PageProp {
     menu : MenuType[],
-    type: string
+    type: string,
+    openFunction: () => void,
+    closeFunction: () => void
 }
+
+
 
 const handleClick = (item: MenuType) => {
     localStorage.setItem("recipe", JSON.stringify(item));
 }
 
-export default function ImgMediaCard({menu,type}:PageProp) {
+export default function ImgMediaCard({menu,type,openFunction,closeFunction}:PageProp) {
 
     const styled ={
         content : {
@@ -62,14 +66,16 @@ export default function ImgMediaCard({menu,type}:PageProp) {
         minHeight:{md:"250px",lg:"180px"}
       }}>
         <Typography gutterBottom variant="h4" component="a"  
-         href={`/${type}/${item.name.toLowerCase()}`} 
+         href={`/${type}/${item.name.toLowerCase()}` } 
+         
         sx={{fontFamily: "Almendra",
             fontStyle:"italic",
             fontWeight:"700",
             color:"#832232",
             textDecoration:"none",
             fontSize:"22px" 
-        }}>
+        }} onClick={openFunction} >
+          
           {item.name}
         </Typography>
         <Typography variant="body2"  sx={styled.content}>

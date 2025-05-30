@@ -1,3 +1,5 @@
+import SelectedSingleMenu from "@/components/SelectedSingleMenu";
+import CustomizedDialogs from "@/components/SelectedSingleMenu";
 import { selectedMenu } from "@/data/data"
 import { MenuType } from "@/types/type";
 
@@ -6,12 +8,10 @@ type pastryProp = Promise<{ pastry: string }>;
 export default async function PastryPage ({params}: {params: pastryProp}) { 
     const {pastry} =  await params;
         const clickedPastry  = decodeURIComponent (pastry)
-        console.log(clickedPastry)
-       const selectedPastry : MenuType | undefined = selectedMenu(clickedPastry) 
-       console.log(selectedPastry) 
+        const selectedPastry : MenuType | undefined = selectedMenu(clickedPastry) 
     return(
         <>
-         <p>{selectedPastry?.description}</p> 
+        {selectedPastry && <SelectedSingleMenu menu={selectedPastry} />}
         </>
     )
 }
