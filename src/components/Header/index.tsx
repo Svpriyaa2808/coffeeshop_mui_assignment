@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
             href="/"
             sx={{
                 flexGrow:1,
-                justifyContent:"center",
+                justifyContent:"flex-start",
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: "Almendra" , 
                 fontWeight: "bold",

@@ -33,7 +33,11 @@ export default function RecipeReviewCard({favourite}: FavouriteProp) {
         maxWidth:345,
         justifyContent:"center" }} 
         elevation={12}>
-      <CardHeader
+      <CardHeader 
+        sx={{
+            color: "#832232",
+            fontStyle:"italic"
+        }}
         title={favourite.name}
       />
       <CardMedia
@@ -43,7 +47,9 @@ export default function RecipeReviewCard({favourite}: FavouriteProp) {
         alt={favourite.name}
       />
       <CardContent>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" sx={{ color:"black" ,
+            fontSize:"20px", 
+        }}>
          {favourite.description}
         </Typography>
       </CardContent>       
