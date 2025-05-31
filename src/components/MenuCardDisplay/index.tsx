@@ -14,7 +14,8 @@ import { MenuType } from '@/types/type';
 
 interface PageProp {
     menu : MenuType[],
-    type: string
+    type: string,
+   
 }
 
 const handleClick = (item: MenuType) => {

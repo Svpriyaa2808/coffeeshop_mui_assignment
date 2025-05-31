@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import CoffeeRoundedIcon from '@mui/icons-material/CoffeeRounded';
 
 
-const pages = ['Pastry', 'Breakfast'];
+const pages = ['Pastry', 'Breakfast','Favourites'];
 
 
 function ResponsiveAppBar() {
