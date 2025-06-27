@@ -12,7 +12,6 @@ import { MenuType } from '@/types/type';
 
 interface PageProp {
     menu : MenuType[],
-    type: string,
     clickedProduct : (item:MenuType) => MenuType|void
 }
 
@@ -20,7 +19,7 @@ const handleClick = (item: MenuType) => {
     localStorage.setItem("recipe", JSON.stringify(item));
 }
 
-export default function ImgMediaCard({menu,type,clickedProduct}:PageProp) {
+export default function ImgMediaCard({menu,clickedProduct}:PageProp) {
 
     const styled ={
         content : {

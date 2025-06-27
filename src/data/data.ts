@@ -113,7 +113,8 @@ export const snackMenu: MenuType[] = [
 
   
  export const selectedMenu = (name:string):MenuType | undefined => {
-  return  pastryMenu.find(item => item.name.toLowerCase() === name.toLowerCase()) 
+  const allItems = [...pastryMenu, ...snackMenu];
+  return allItems.find(item => item.name.toLowerCase() === name.toLowerCase());
  }
 
  console.log(selectedMenu("Carrot Muffin"))

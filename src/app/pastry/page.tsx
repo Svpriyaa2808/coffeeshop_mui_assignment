@@ -22,7 +22,7 @@ const Pastry = () => {
 
     return (
         <>
-        <MenuCardDisplay menu={pastryMenu} type="pastry"  clickedProduct={chosenMenu}/>
+        <MenuCardDisplay menu={pastryMenu} clickedProduct={chosenMenu}/>
         {open && chosenProduct && <SelectedProduct closeDialog={handleClose} open={open} selected={chosenProduct}/>}
         </>
     )
