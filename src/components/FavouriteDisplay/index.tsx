@@ -16,7 +16,8 @@ export default function RecipeReviewCard({favourite}: FavouriteProp) {
     <Typography component="div" sx={{
         m:4,
         display:"flex",
-        justifyContent:"space-around"
+        justifyContent:"space-around",
+        flexGrow:1
     }}>
     <Card sx={{ 
         maxWidth:345,

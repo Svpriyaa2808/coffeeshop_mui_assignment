@@ -3,11 +3,9 @@ import * as React from 'react';
 import MenuCardDisplay from "@/components/MenuCardDisplay"
 import {pastryMenu} from "@/data/data"
 import { MenuType } from "@/types/type"
-import { selectedMenu } from '@/data/data';
 import SelectedProduct from '@/components/SelectedProduct';
 
 const Pastry = () => {
-
     const [open, setOpen] = React.useState(false);
     const [chosenProduct,setChosenProduct] = React.useState<MenuType|null>(null)
     
@@ -19,7 +17,6 @@ const Pastry = () => {
         setOpen(true);
     }
   
-
     return (
         <>
         <MenuCardDisplay menu={pastryMenu} clickedProduct={chosenMenu}/>

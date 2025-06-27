@@ -1,74 +1,91 @@
-'use client'
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
-import { Typography,Container,Button} from '@mui/material';
+import { Box, IconButton, Typography } from "@mui/material"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-const pages = ['Pastry', 'Breakfast'];
+const Footer = () => {
+  const styled={
+    h4 : {
+      fontWeight:'bold',
+      textTransform:'uppercase',
+      fontSize: '22px',
+      textAlign : 'center'
+    },
 
-export default function FixedBottomNavigation() {
-  
-  const ref = React.useRef<HTMLDivElement>(null);
-  
+    icon : {
+      fontSize: '32px',
+      m:1
+    },
+
+    flexDiv : {
+      display:'flex',
+      flexDirection:'column',
+      m:1,
+      mx:3
+    }
+  }
   return (
-    <Box ref={ref} sx={{height:"auto"}}>
-        <CssBaseline />
-      <Paper  elevation={3}>
-        <BottomNavigation 
-            sx={{backgroundColor:"#832232",
-                p:4,
-                height:"auto",
-                position: 'fixed',
-                bottom: 0,
-                left: 0,
-                right: 0,
-            }}
-         
-        >
-            <BottomNavigationAction sx={{
-                
-                display:"flex",
-                gap:4
-            }} />
-            <BottomNavigationAction         label="&copy; 2025"
- component="p" sx={{
-                color: "white",
-                m:2
-            }}  /> &copy; 2025
-            <Box sx={{  display: 'flex' , 
-            flexDirection:"column" 
-            }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                href={`${page.toLowerCase()}`}
-                sx={{  
-                    color: 'white', 
-                    display: 'block' ,
-                    fontSize:"1.2rem",
-                    fontWeight:500,
+    <>
+    <Box  sx={{
+      bgcolor : "#832232",
+      color : 'white',
+      p:4,
+      pb:1
+      }}>
+        <Typography component='div' sx={{
+          display:'flex',
+          alignItems:'center',
+          flexDirection: {xs: 'column' , sm: 'row'},
+          justifyContent:{xs:'center',sm:'space-between'},
+          mb:2,
+        }}>
+          <Typography component='div' sx={styled.flexDiv}>
+            <Typography component='h4' sx={styled.h4}>
+              Products
+            </Typography>
+            <Typography component='div' sx={styled.flexDiv}>
+              <Typography component='a' href='/pastry' 
+                sx={{
+                  textDecoration : 'none',
+                  color:'white',
+                  fontSize:'20px'
                 }}>
-                {page}
-              </Button>
-            ))} 
-          </Box>
-        
-          
-         
-        </BottomNavigation>
-      </Paper>
+                Pastry
+              </Typography> 
+              <Typography component='a' href="/breakfast" 
+                sx={{
+                  textDecoration : 'none',
+                  color:'white',
+                  fontSize:'20px'
+                }}>
+                Breakfast
+              </Typography>
+            </Typography>
+        </Typography>
+           <Typography component='div' sx={styled.flexDiv}>
+            <Typography component='h4' sx={styled.h4}>
+              follow us
+            </Typography>
+            <Typography component='div' 
+              sx={{
+                display:"flex"
+              }}>
+              <FacebookIcon sx={styled.icon}/>
+              <InstagramIcon sx={styled.icon}/>
+              <LinkedInIcon sx={styled.icon}/>
+              <YouTubeIcon sx={styled.icon}/>
+            </Typography>
+          </Typography>
+        </Typography>
+        <Typography component='p' sx={{
+          textAlign : 'center',
+          mb:0,
+          }}>&copy; 2025 PR Coffee.
+        </Typography>
     </Box>
-  );
+    </>
+  )
 }
 
+export default Footer

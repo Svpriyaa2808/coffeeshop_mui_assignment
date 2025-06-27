@@ -1,9 +1,12 @@
+import { Typography } from "@mui/material"
 
 
 export default function Home() {
   return (
-    <div>
+    <Typography component='div' sx={{
+      flexGrow:1,
+    }}>
       coffeeshop
-    </div>
+ </Typography>
   );
 }

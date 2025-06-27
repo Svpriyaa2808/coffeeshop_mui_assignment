@@ -34,7 +34,7 @@ export default function ImgMediaCard({menu,clickedProduct}:PageProp) {
     <Card  sx={{ display: "flex",
         flexWrap:"wrap",
         p:0,
-       justifyContent:"center"
+       justifyContent:"center",
     }} >
         {menu.map((item,index:number) => 
          <Container key={index} 
