@@ -22,22 +22,21 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 interface MenuProps {
-  menu:MenuType
+  menu:MenuType,
+  type:string,
+  closeFunction: () => void
 }
 
-export default function CustomizedDialogs({menu}:MenuProps) {
+export default function CustomizedDialogs({menu,type,closeFunction}:MenuProps) {
   // const [open, setOpen] = React.useState(false);
 
   // const handleClickOpen = () => {
   //   setOpen(true);
   // };
 
-  const router = useRouter();  
-  
-  const handleClose = () => {
-    router.push(`/`)
-  };
-
+ 
+  console.log(menu.name)
+ 
   return (
     <React.Fragment>
       {/* <Button variant="outlined" onClick={handleClickOpen}>
@@ -53,11 +52,11 @@ export default function CustomizedDialogs({menu}:MenuProps) {
         </DialogTitle>
         <IconButton
           aria-label="close"
-         onClick={handleClose}
+         onClick={closeFunction}
           sx={(theme) => ({
             position: 'absolute',
             right: 8,
-            top: 8,
+            top: 60,
             color: theme.palette.grey[500],
           })}
         >
