@@ -6,23 +6,21 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {pastryMenu} from "@/data/data"
 import { Container } from '@mui/material';
-import { Almendra } from 'next/font/google';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { MenuType } from '@/types/type';
 
 interface PageProp {
     menu : MenuType[],
     type: string,
-   
+    clickedProduct : (item:MenuType) => MenuType|void
 }
 
 const handleClick = (item: MenuType) => {
     localStorage.setItem("recipe", JSON.stringify(item));
 }
 
-export default function ImgMediaCard({menu,type}:PageProp) {
+export default function ImgMediaCard({menu,type,clickedProduct}:PageProp) {
 
     const styled ={
         content : {
@@ -62,8 +60,8 @@ export default function ImgMediaCard({menu,type}:PageProp) {
       <CardContent sx={{
         minHeight:{md:"250px",lg:"180px"}
       }}>
-        <Typography gutterBottom variant="h4" component="a"  
-         href={`/${type}/${item.name.toLowerCase()}`} 
+        <Typography gutterBottom variant="h4" component="h4"  
+        onClick={() => clickedProduct(item)}
         sx={{fontFamily: "Almendra",
             fontStyle:"italic",
             fontWeight:"700",
@@ -71,7 +69,7 @@ export default function ImgMediaCard({menu,type}:PageProp) {
             textDecoration:"none",
             fontSize:"22px" 
         }}>
-          {item.name}
+        {item.name}
         </Typography>
         <Typography variant="body2"  sx={styled.content}>
           {item.description}

@@ -1,12 +1,29 @@
+'use client'
+import * as React from 'react';
 import MenuCardDisplay from "@/components/MenuCardDisplay"
 import {pastryMenu} from "@/data/data"
 import { MenuType } from "@/types/type"
+import { selectedMenu } from '@/data/data';
+import SelectedProduct from '@/components/SelectedProduct';
 
 const Pastry = () => {
- 
+
+    const [open, setOpen] = React.useState(false);
+    const [chosenProduct,setChosenProduct] = React.useState<MenuType|null>(null)
+    
+    const handleClose = () => setOpen(false);
+    
+    const chosenMenu = (item: MenuType) => {
+        setChosenProduct(item);
+        console.log(item);
+        setOpen(true);
+    }
+  
+
     return (
         <>
-        <MenuCardDisplay menu={pastryMenu} type="pastry" />
+        <MenuCardDisplay menu={pastryMenu} type="pastry"  clickedProduct={chosenMenu}/>
+        {open && chosenProduct && <SelectedProduct closeDialog={handleClose} open={open} selected={chosenProduct}/>}
         </>
     )
 }
