@@ -1,19 +1,29 @@
+'use client'
+import * as React from 'react';
+import MenuCardDisplay from "@/components/MenuCardDisplay"
 import {pastryMenu} from "@/data/data"
-import Image from "next/image"
-import Link from "next/link"
+import { MenuType } from "@/types/type"
+import { selectedMenu } from '@/data/data';
+import SelectedProduct from '@/components/SelectedProduct';
+
 const Pastry = () => {
+
+    const [open, setOpen] = React.useState(false);
+    const [chosenProduct,setChosenProduct] = React.useState<MenuType|null>(null)
+    
+    const handleClose = () => setOpen(false);
+    
+    const chosenMenu = (item: MenuType) => {
+        setChosenProduct(item);
+        console.log(item);
+        setOpen(true);
+    }
+  
 
     return (
         <>
-        {pastryMenu.map((item, index:number) => 
-            <div key={index}>
-                <p>{item.name}</p>
-                <Link href={`/pastry/${item.name.toLowerCase()}`}>
-            <Image src={`/${item.image}`} alt={item.name} width={500} height={500} />
-            </Link>
-            </div>
-        )}
-        
+        <MenuCardDisplay menu={pastryMenu} clickedProduct={chosenMenu}/>
+        {open && chosenProduct && <SelectedProduct closeDialog={handleClose} open={open} selected={chosenProduct}/>}
         </>
     )
 }

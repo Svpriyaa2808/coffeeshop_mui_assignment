@@ -11,9 +11,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import CoffeeRoundedIcon from '@mui/icons-material/CoffeeRounded';
-import { Almendra } from 'next/font/google';
 
-const pages = ['Pastry', 'Breakfast'];
+
+const pages = ['Pastry', 'Breakfast','Favourites'];
 
 
 function ResponsiveAppBar() {
@@ -29,8 +29,6 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
- 
-
   return (
     <AppBar sx={{
         backgroundColor: "#832232"
@@ -45,8 +43,7 @@ function ResponsiveAppBar() {
             href="/"
             sx={{
                 flexGrow:1,
-                justifyContent:"center",
-                mr: 2,
+                justifyContent:"flex-start",
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: "Almendra" , 
                 fontWeight: "bold",
@@ -125,7 +122,8 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                href={`${page.toLowerCase()}`}
+                component = "a"
+                href={`/${page.toLowerCase()}`}
                 sx={{ my: 2, 
                     color: 'white', 
                     display: 'block' ,
