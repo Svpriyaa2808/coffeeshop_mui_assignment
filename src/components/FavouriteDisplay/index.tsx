@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { MenuType } from '@/types/type';
-
+import { Box } from '@mui/material';
 interface FavouriteProp {
     favourite : MenuType
 }
@@ -13,11 +13,14 @@ interface FavouriteProp {
 export default function RecipeReviewCard({favourite}: FavouriteProp) {
   
   return (
+    <>
+    <Box sx={{
+      flexGrow : 1
+    }}>
     <Typography component="div" sx={{
         m:4,
         display:"flex",
         justifyContent:"space-around",
-        flexGrow:1
     }}>
     <Card sx={{ 
         maxWidth:345,
@@ -45,5 +48,8 @@ export default function RecipeReviewCard({favourite}: FavouriteProp) {
       </CardContent>       
     </Card>
     </Typography>
+    </Box>
+    </>
+
   );
 }
