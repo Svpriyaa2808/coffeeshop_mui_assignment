@@ -3,4 +3,5 @@ export interface MenuType {
     price:number,
     description:string,
     image:string
+    preparation?:string
 }

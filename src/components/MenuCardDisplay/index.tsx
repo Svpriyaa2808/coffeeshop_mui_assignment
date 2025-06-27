@@ -67,7 +67,8 @@ export default function ImgMediaCard({menu,type,clickedProduct}:PageProp) {
             fontWeight:"700",
             color:"#832232",
             textDecoration:"none",
-            fontSize:"22px" 
+            fontSize:"22px" ,
+            cursor:'pointer'
         }}>
         {item.name}
         </Typography>
@@ -82,7 +83,10 @@ export default function ImgMediaCard({menu,type,clickedProduct}:PageProp) {
       <Button onClick={()=>handleClick(item)} size="small" sx={
         {
             fontSize : "16px",
-            color : "#832232"
+            color : "#832232",
+            '&:hover':{
+              bgcolor:'bisque'
+            }
         }
       }>Add to Favourites</Button>
         <FavoriteIcon  sx={{
