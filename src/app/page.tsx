@@ -1,47 +1,68 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
+import { HomepageContent } from '@/data/data';
+import { HomePageContentType } from '@/types/type';
+
 export default function ImgMediaCard() {
+   
+  const styled ={
+        content : {
+            color: "black",
+            fontSize:{xs:"14px",sm:"16px"},
+            my:2
+        }
+    }
+
   return (
     <Box sx={{
       flexGrow:1,
       display:"flex",
+      flexDirection:"column",
       justifyContent:"center"
     }}>
-    <Card sx={{ maxWidth:{xs:"100%",sm:"100%",md:"100%"},
+      {HomepageContent.map((item,index)=> (
+    <Card key={index} sx={{ maxWidth:{xs:"100%",sm:"100%",md:"100%"},
                 m:2,display:"flex",
-                flexDirection:{xs:"column",md:"row"} }}>
+                flexDirection:{xs:"column",lg:"row"},
+                 }}>
       <CardMedia
         component="img"
-        alt="Buns"
-        image="/bun.jpg"
+        alt={item.title}
+        image={`/${item.image}`}
         sx={{
-          height:{xs:"300px",sm:"500px",md:"300px",lg:"500px"}
+          width:{xs:"100%",lg:"50%"},
+          // height:{xs:"300px",sm:"500px",md:"500px",lg:"500px"},
+          height:"auto",
+          order:{md: item.order ?? 0,xs: 0},
         }}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Pastries at PR
+      <CardContent >
+        <Typography gutterBottom variant="h4" component="h4"
+        sx={{
+          color:"#832232",
+          fontFamily:"Almendra",
+          fontWeight:"500",
+          fontStyle:"italic",
+          fontSize:{xs:"22px",md:"26px"}
+        }}>
+          {item.title}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-         At PR Coffee, we believe that great coffee deserves equally great company—like our range of freshly baked pastries and treats.
-          Every item in our pastry selection is made with care, using high-quality ingredients and time-tested recipes.
+        <Typography component="p" sx={ styled.content }>
+         {item.content1}
         </Typography>
-         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        From fluffy muffins bursting with fresh ingredients to buttery croissants with delicate layers, each bite tells a story of craftsmanship and flavor. Whether you're in the mood for something sweet like our
-         rich mini brownies or something hearty like our cardamom buns, there's a perfect pairing waiting for your coffee.
+         <Typography component="p" sx={ styled.content }>
+          {item.content2}
         </Typography>
-         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        We bake in small batches throughout the day to ensure freshness, aroma, and that warm-from-the-oven feeling in every bite. Whether you're 
-        grabbing breakfast, a mid-day snack, or an afternoon pick-me-up, our baked goods are here to make your coffee moment special.
+         <Typography component="p" sx={ styled.content }>
+        {item.content3}
         </Typography>
       </CardContent>
     </Card>
+     ))}
     </Box>
   );
 }

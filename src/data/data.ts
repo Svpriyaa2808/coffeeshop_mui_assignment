@@ -1,4 +1,4 @@
-import {MenuType} from '@/types/type'
+import {MenuType,HomePageContentType} from '@/types/type'
 
 export const pastryMenu: MenuType[] = [
   {
@@ -117,4 +117,20 @@ export const snackMenu: MenuType[] = [
   return allItems.find(item => item.name.toLowerCase() === name.toLowerCase());
  }
 
- console.log(selectedMenu("Carrot Muffin"))
+export const HomepageContent : HomePageContentType[] = [
+  {
+    title: "Our Freshly Baked Pastries at PR Coffee",
+    image : "bun.jpg",
+    content1: " At PR Coffee, we believe that great coffee deserves equally great company—like our range of freshly baked pastries and treats. Every item in our pastry selection is made with care, using high-quality ingredients and time-tested recipes.",
+    content2:" From fluffy muffins bursting with fresh ingredients to buttery croissants with delicate layers, each bite tells a story of craftsmanship and flavor. Whether you're in the mood for something sweet like our rich mini brownies or something hearty like our cardamom buns, there's a perfect pairing waiting for your coffee.",
+    content3 : " We bake in small batches throughout the day to ensure freshness, aroma, and that warm-from-the-oven feeling in every bite. Whether you're grabbing breakfast, a mid-day snack, or an afternoon pick-me-up, our baked goods are here to make your coffee moment special.",
+  },
+  {
+    title: "Fresh & Flavorful Salads at PR Coffee",
+    image: "salads.jpg",
+    content1:"At PR Coffee, we believe good food should feel fresh, light, and full of flavor. That's why our salads are made daily with crisp vegetables, ripe fruits, and quality ingredients that bring out natural taste and texture in every bite.",
+    content2: "Whether you're looking for a refreshing side to complement your coffee or a wholesome meal on its own, our salads are crafted to balance nutrition and flavor. From creamy avocado with juicy tomatoes to vibrant greens tossed with zesty dressings, every bowl is a colorful mix of health and satisfaction.",
+    content3: "We prepare everything in small batches throughout the day to keep it crisp, cool, and bursting with freshness. Perfect for a quick lunch, a light afternoon bite, or a feel-good addition to your coffee break—our salads offer clean eating without compromising on taste.",
+    order:2
+  }
+]
