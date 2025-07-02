@@ -35,9 +35,8 @@ export default function ImgMediaCard() {
         image={`/${item.image}`}
         sx={{
           width:{xs:"100%",lg:"50%"},
-          // height:{xs:"300px",sm:"500px",md:"500px",lg:"500px"},
           height:"auto",
-          order:{md: item.order ?? 0,xs: 0},
+          order:{lg: item.order ?? 0,xs: 0},
         }}
       />
       <CardContent >
